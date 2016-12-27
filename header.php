@@ -392,15 +392,15 @@ endif; endforeach; ?>
 		<div class="row homesmallbangbig">
 				<div class="boxxhh1">
 					<!--<a href="https://www.teezeewatches.com/sneaker-inspired/"><img src="https://www.teezeewatches.com/wp-content/uploads/2014/02/banho_1.jpg"></a>-->
-					<a href="https://www.teezeewatches.com/shop-our-instagram/"><img src="https://www.teezeewatches.com/wp-content/uploads/2016/06/home-img1.jpg"></a>
+					<a href="<?php echo the_field('link_image_1') ?>"><img src="<?php echo the_field('image_box_1') ?>"></a>
 				</div>
 				<div class="boxxhh2">
 					<div class="boxxhhll1">
-						<a href="https://www.teezeewatches.com/builder/"><img  src="https://www.teezeewatches.com/wp-content/uploads/2016/06/WATCHBUILDER.gif"></a>
+						<a href="<?php echo the_field('link_image_2') ?>"><img  src="<?php echo the_field('image_box_2') ?>"></a>
 					</div>
 					<div class="boxxhhll2">
 						<div class="boxxhhnnll1">
-							<a href="https://www.teezeewatches.com/packages/"><img src="https://www.teezeewatches.com/wp-content/uploads/2016/06/home-img3.jpg"></a>
+							<a href="<?php echo the_field('link_image_3') ?>"><img src="<?php echo the_field('image_box_3') ?>"></a>
 						</div>
 						<div class="boxxhhnnll2">
 							<a href="https://www.teezeewatches.com/band-holders/"><img src="https://www.teezeewatches.com/wp-content/uploads/2016/06/home-img2.jpg"></a>
