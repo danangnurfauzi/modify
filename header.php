@@ -403,7 +403,7 @@ endif; endforeach; ?>
 							<a href="<?php echo the_field('link_image_3') ?>"><img src="<?php echo the_field('image_box_3') ?>"></a>
 						</div>
 						<div class="boxxhhnnll2">
-							<a href="https://www.teezeewatches.com/band-holders/"><img src="https://www.teezeewatches.com/wp-content/uploads/2016/06/home-img2.jpg"></a>
+							<a href="<?php echo the_field('link_image_4') ?>"><img src="<?php echo the_field('image_box_4') ?>"></a>
 						</div>
 					</div>
 				</div>
