@@ -90,14 +90,28 @@ if (is_page('new-builder-4')) { ?>
 
 <!-- Start Header -->
 <div class="tbigheader1">
+	<div class="contener">
 	<div class="row">
 			<div class="small-12 medium-7 columns tbigheader1box1">
+				<?php 
+					$site_logo = ot_get_option('logo');
+					if($site_logo) : ?>
+						<div class="site-logo">
+							<a href="<?php echo get_home_url(); ?>" alt="<?php echo get_bloginfo('name'); ?>" />
+								<img src="<?php echo esc_url($site_logo); ?>" width="150" height="120" />
+							</a>
+						</div>
+				<?php endif; ?>
 				<ul>
-							<li>
+							<li style="display: none;">
 					<a class=first" href="https://www.teezeewatches.com/"><img src="https://www.teezeewatches.com/wp-content/uploads/2014/03/fixlogo.png" width="150" height="120"></a>
 							</li>
 					<!-- <li>Free Shipping Over $50</li> -->
-					<li>Free US shipping over $100</li>
+					<?php 
+						$header_text = ot_get_option('header_line');
+						if($header_text) : ?>
+							<li><?php echo wp_kses_post($header_text); ?></li>
+					<?php endif; ?>
 					<li>
 						<?php
 							if ( is_user_logged_in() ) { ?> 
@@ -124,6 +138,15 @@ if (is_page('new-builder-4')) { ?>
 			</div>
 
 			<div class="small-12 medium-5 columns tbigheader1box2">
+				<div class="mobile-btnn show-for-small">
+					<?php if (ot_get_option('header_cart') != 'off') { ?>
+						<a href="<?php if($woocommerce) { echo $woocommerce->cart->get_cart_url(); }?>" title="<?php _e('View your shopping cart',THB_THEME_NAME); ?>" id="mobile-cart">
+						</a>
+					<?php } ?>
+					<a href="#mobile-toggle" id="mobile-toggle" style="color:#fff !important">
+						<i class="fa fa-bars" style="color:#fff !important"></i>
+					</a>
+				</div>
 				<ul>
 					<li><?php the_field('search','option'); ?></li>
 					<li class="last"> 			
@@ -339,6 +362,7 @@ endif; endforeach; ?>
 				</ul>
 			</div>
 	</div>
+	</div>
 </div>
 
 
@@ -356,7 +380,7 @@ endif; endforeach; ?>
 						<a href="<?php echo home_url(); ?>" class="show-logo logolink"><img src="<?php echo ot_get_option('logo_mobile'); ?>" alt="<?php bloginfo('name'); ?>" /></a>
 					<?php } ?>
 				</div>
-				<div class="small-6 medium-2 columns show-for-small">
+				<div class="small-6 medium-2 columns hidden">
 					<?php if (ot_get_option('header_cart') != 'off') { ?>
 					<a href="<?php if($woocommerce) { echo $woocommerce->cart->get_cart_url(); }?>" title="<?php _e('View your shopping cart',THB_THEME_NAME); ?>" id="mobile-cart">
 					</a>
@@ -373,6 +397,7 @@ endif; endforeach; ?>
 	</div>
 </header>
 <nav id="nav">
+	<div class="contener">
 	<div class="row">
 		<div class="small-12">
 			<?php if(has_nav_menu('nav-menu')) { ?>
@@ -383,16 +408,17 @@ endif; endforeach; ?>
 				</ul>
 			<?php } ?>
 		</div>
-		
+	</div>
 	</div>
 </nav>
 <?php if (is_front_page()) {
 		?><div><?php layerslider(3) ?></div>
 			
 		<div class="row homesmallbangbig">
+			<div class="container">
 				<div class="boxxhh1">
 					<!--<a href="https://www.teezeewatches.com/sneaker-inspired/"><img src="https://www.teezeewatches.com/wp-content/uploads/2014/02/banho_1.jpg"></a>-->
-					<a href="<?php echo the_field('link_image_1') ?>"><img src="<?php echo the_field('image_box_1') ?>"></a>
+					<a href="<?php echo the_field('link_image_1') ?>"><img style="margin-top: 10%" src="<?php echo the_field('image_box_1') ?>"></a>
 				</div>
 				<div class="boxxhh2">
 					<div class="boxxhhll1">
@@ -407,6 +433,7 @@ endif; endforeach; ?>
 						</div>
 					</div>
 				</div>
+			</div>
 		</div>
 		
 		<?php
@@ -418,3 +445,4 @@ endif; endforeach; ?>
 <?php get_template_part('template-breadcrumbs'); ?>
 <?php } // Blank page check ?>
 <div role="main" id="mainWrapper">
+	<div class="contener">
